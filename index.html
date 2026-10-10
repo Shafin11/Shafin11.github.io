@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohammad Omar Raihan · Machine Learning, Data & IT</title>
+  <meta name="description" content="Portfolio of Mohammad Omar Raihan, Computer Science graduate from BRAC University working in machine learning, data analysis, research, IT operations and project management." />
+  <meta name="theme-color" content="#0A0E1F" />
+  <meta property="og:title" content="Mohammad Omar Raihan · Portfolio" />
+  <meta property="og:description" content="Machine learning, data science, research and IT. Based in Dhaka, Bangladesh." />
+  <meta property="og:image" content="assets/img/profile.jpg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237C5CFF'/%3E%3Cstop offset='.5' stop-color='%2322D3EE'/%3E%3Cstop offset='1' stop-color='%23FF5FA2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230A0E1F'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-size='26' font-weight='900' text-anchor='middle' fill='url(%23g)'%3EOR%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Apply the saved theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("or-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__bands">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="loader__inner">
+      <p class="loader__name">Omar Raihan</p>
+      <p class="loader__count"><span id="loaderCount">0</span>%</p>
+    </div>
+  </div>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ========== AMBIENT COLOR FIELD ========== -->
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora__blob aurora__blob--a"></span>
+    <span class="aurora__blob aurora__blob--b"></span>
+    <span class="aurora__blob aurora__blob--c"></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <a href="#home" class="logo" aria-label="Mohammad Omar Raihan, back to top">
+      <span class="logo__text">Mohammad Omar Raihan</span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#research" class="nav__link">Research</a>
+      <a href="#work" class="nav__link">Work</a>
+      <a href="#journey" class="nav__link">Journey</a>
+      <a href="#stack" class="nav__link">Skills</a>
+      <a href="#play" class="nav__link">Play</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel">
+        <span class="menu-btn__label">Menu</span>
+        <span class="menu-btn__icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-screen menu -->
+  <div class="menu" id="menuPanel" hidden>
+    <nav class="menu__nav" aria-label="Menu">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#work">Work</a>
+      <a href="#journey">Journey</a>
+      <a href="#stack">Skills</a>
+      <a href="#play">Play</a>
+      <a href="#weather">Weather</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu__foot">
+      <button type="button" data-copy-email>omarshafin12@gmail.com</button>
+      <div class="menu__social">
+        <a href="https://www.linkedin.com/in/mohammadomarraihan/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Shafin11" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side social rail -->
+  <aside class="rail" aria-label="Social links">
+    <a href="https://www.linkedin.com/in/mohammadomarraihan/" target="_blank" rel="noopener" aria-label="LinkedIn" data-cursor="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06C21.1 9.04 21.5 11.7 21.5 15v6h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4z"/></svg>
+    </a>
+    <a href="https://github.com/Shafin11" target="_blank" rel="noopener" aria-label="GitHub" data-cursor="GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+    </a>
+    <button type="button" data-copy-email aria-label="Copy my email address" data-cursor="Copy email">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3z" fill="none" stroke-width="1.8"/><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke-width="1.8"/></svg>
+    </button>
+    <span class="rail__line" aria-hidden="true"></span>
+  </aside>
+
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+      <div class="hero__content container">
+        <p class="hero__hello" data-intro>Hi, I'm</p>
+        <h1 class="hero__name" aria-label="Mohammad Omar Raihan">
+          <span class="hero__line" data-intro><span class="split">Mohammad</span></span>
+          <span class="hero__line" data-intro><span class="split">Omar</span></span>
+          <span class="hero__line hero__line--outline" data-intro><span class="split">Raihan</span></span>
+        </h1>
+
+        <p class="hero__role" data-intro>
+          I work on
+          <span class="rotator" id="rotator" aria-live="polite">
+            <span class="rotator__word is-active">machine learning</span>
+            <span class="rotator__word">data analysis</span>
+            <span class="rotator__word">research</span>
+            <span class="rotator__word">IT operations</span>
+            <span class="rotator__word">project management</span>
+          </span>
+        </p>
+
+        <p class="hero__intro" data-intro>
+          Computer Science graduate from BRAC University. I turn real-world data into models and insights, and keep the technology around people running smoothly.
+        </p>
+
+        <div class="hero__cta" data-intro>
+          <a class="btn btn--primary magnetic" href="assets/docs/Mohammad_Omar_Raihan_CV.pdf" download data-cv data-cursor="PDF">
+            <span>Download CV</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+          </a>
+          <a class="btn btn--ghost magnetic" href="#work">See my work</a>
+        </div>
+      </div>
+
+      <div class="hero__meta container" data-intro>
+        <p class="hero__place">Dhaka, Bangladesh <span class="hero__clock" id="clock">--:--</span><a class="hero__wx" id="heroWx" href="#weather" hidden></a></p>
+        <p class="hero__status"><span class="pulse" aria-hidden="true"></span>Open to opportunities</p>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+        <span class="scroll-cue__track"><span class="scroll-cue__thumb"></span></span>
+      </a>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about section" id="about">
+      <div class="container about__grid">
+        <figure class="portrait" data-tilt>
+          <div class="portrait__ring" aria-hidden="true"></div>
+          <div class="portrait__frame">
+            <picture>
+              <source srcset="assets/img/profile.webp" type="image/webp" />
+              <img src="assets/img/profile.jpg" alt="Portrait of Mohammad Omar Raihan" width="720" height="720" loading="lazy" />
+            </picture>
+            <span class="portrait__shine" aria-hidden="true"></span>
+          </div>
+          <figcaption class="portrait__tag"><span class="pulse" aria-hidden="true"></span>Based in Dhaka</figcaption>
+        </figure>
+
+        <div class="about__text">
+          <h2 class="section-title reveal">About me</h2>
+          <p class="about__lead scrub-text">
+            Computer Science graduate from BRAC University, looking to build a long-term career where I can use technology to solve real problems.
+          </p>
+          <p class="about__body reveal">
+            I bring hands-on experience in IT support and project management, along with project work in data analysis, machine learning and web development. I learn quickly, work well in teams, and want to keep growing my skills while taking on more responsibility.
+          </p>
+
+          <dl class="facts">
+            <div class="facts__item reveal"><dt><span class="count" data-to="8">0</span></dt><dd>projects on GitHub</dd></div>
+            <div class="facts__item reveal"><dt><span class="count" data-to="2">0</span></dt><dd>professional roles</dd></div>
+            <div class="facts__item reveal"><dt><span class="count" data-to="0.95" data-decimals="2">0</span></dt><dd>best R² in my PM2.5 research</dd></div>
+            <div class="facts__item reveal"><dt><span class="count" data-to="6.5" data-decimals="1">0</span></dt><dd>IELTS band score</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOCUS AREAS ========== -->
+    <section class="focus section" id="focus" aria-labelledby="focusTitle">
+      <div class="container">
+        <h2 class="section-title reveal" id="focusTitle">What I do</h2>
+        <p class="section-sub reveal">Four areas I keep coming back to. Open one to see what it covers.</p>
+
+        <div class="focus__list" id="focusList">
+          <article class="focus__item is-open">
+            <button class="focus__head" type="button" aria-expanded="true">
+              <span class="focus__glyph" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><circle cx="10" cy="14" r="3.5"/><circle cx="10" cy="34" r="3.5"/><circle cx="24" cy="24" r="3.5"/><circle cx="38" cy="14" r="3.5"/><circle cx="38" cy="34" r="3.5"/><path d="M13 15.5l8 6.5M13 32.5l8-6.5M27 22l8-6.5M27 26l8 6.5"/></svg>
+              </span>
+              <span class="focus__name">Machine learning &amp; data science</span>
+              <span class="focus__plus" aria-hidden="true"></span>
+            </button>
+            <div class="focus__body">
+              <div class="focus__inner">
+                <p>Cleaning messy datasets, exploring them visually and comparing models fairly, from linear baselines to tree ensembles and neural networks. I care about honest evaluation, like time-ordered splits for forecasting.</p>
+                <ul class="chips"><li>scikit-learn</li><li>PyTorch</li><li>XGBoost</li><li>pandas</li><li>EDA</li></ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="focus__item">
+            <button class="focus__head" type="button" aria-expanded="false">
+              <span class="focus__glyph" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M16 6c0 12 16 12 16 24s-16 12-16 12M32 6c0 12-16 12-16 24s16 12 16 12"/><path d="M18 13h12M18 35h12M20 24h8"/></svg>
+              </span>
+              <span class="focus__name">Research</span>
+              <span class="focus__plus" aria-hidden="true"></span>
+            </button>
+            <div class="focus__body">
+              <div class="focus__inner">
+                <p>Applied research in computational biology and environmental data. My thesis aligns RNA-seq and CRISPR data in a shared space to infer gene regulatory networks, and a team study of mine tested whether complex models really beat simple ones for PM2.5 forecasting.</p>
+                <ul class="chips"><li>Multimodal learning</li><li>Bioinformatics</li><li>Forecasting</li><li>Remote sensing</li></ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="focus__item">
+            <button class="focus__head" type="button" aria-expanded="false">
+              <span class="focus__glyph" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="26" rx="4"/><path d="M17 41h14M24 35v6M14 18l-4 4 4 4M34 18l4 4-4 4M27 16l-6 12"/></svg>
+              </span>
+              <span class="focus__name">Software &amp; databases</span>
+              <span class="focus__plus" aria-hidden="true"></span>
+            </button>
+            <div class="focus__body">
+              <div class="focus__inner">
+                <p>Django web apps, relational database design with ER diagrams, and computer graphics with PyOpenGL. I enjoy turning a messy requirement into a clean schema.</p>
+                <ul class="chips"><li>Django</li><li>MySQL / MariaDB</li><li>SQLite</li><li>PyOpenGL</li></ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="focus__item">
+            <button class="focus__head" type="button" aria-expanded="false">
+              <span class="focus__glyph" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="10" rx="3"/><rect x="8" y="22" width="32" height="10" rx="3"/><circle cx="14" cy="13" r="1.6"/><circle cx="14" cy="27" r="1.6"/><path d="M24 32v8M14 40h20"/></svg>
+              </span>
+              <span class="focus__name">IT operations &amp; project management</span>
+              <span class="focus__plus" aria-hidden="true"></span>
+            </button>
+            <div class="focus__body">
+              <div class="focus__inner">
+                <p>Supporting staff with hardware, software, network and account issues, keeping systems reliable, and running projects from planning and procurement to workshops and reporting.</p>
+                <ul class="chips"><li>Technical support</li><li>Networks &amp; systems</li><li>Planning</li><li>Stakeholder communication</li></ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RESEARCH ========== -->
+    <section class="research section" id="research" aria-labelledby="researchTitle">
+      <div class="container">
+        <h2 class="section-title reveal" id="researchTitle">Research</h2>
+        <p class="section-sub reveal">Two pieces of work I'm proudest of, with the results that came out of them.</p>
+
+        <!-- GRN thesis -->
+        <article class="study reveal">
+          <div class="study__visual">
+            <canvas id="grnCanvas" aria-label="Animation: two groups of points, RNA-seq and CRISPR, moving into one shared space and linking into a network" role="img"></canvas>
+            <div class="study__legend" aria-hidden="true">
+              <span><i class="dot dot--a"></i>RNA-seq expression</span>
+              <span><i class="dot dot--b"></i>CRISPR dependency</span>
+            </div>
+            <button class="study__replay" id="grnReplay" type="button">Replay animation</button>
+          </div>
+          <div class="study__text">
+            <p class="study__kind">Undergraduate thesis · BRAC University</p>
+            <h3 class="study__title">Multimodal Bridge Framework for Gene Regulatory Network Discovery</h3>
+            <p>Most methods guess gene relationships from expression data alone. My framework uses two encoders to bring <strong>RNA-seq expression</strong> and <strong>CRISPR knockout dependency</strong> data into one shared 128-dimensional space, then reads tissue-specific regulatory links from it.</p>
+            <ul class="ticks">
+              <li>Dual-encoder representation learning</li>
+              <li>Maximum Mean Discrepancy (MMD) alignment with diversity-preserving regularisation</li>
+              <li>Links scored with GENIE3, Spearman correlation and embedding similarity</li>
+            </ul>
+            <a class="link-arrow" href="https://github.com/Shafin11/Multimodal-Bridge-Framework-for-Gene-Regulatory-Network-Discovery" target="_blank" rel="noopener" data-cursor="Open">Read the thesis on GitHub</a>
+          </div>
+        </article>
+
+        <!-- PM2.5 -->
+        <article class="study study--flip reveal">
+          <div class="study__visual study__visual--chart">
+            <div class="metric-tabs" role="tablist" aria-label="Choose a metric">
+              <button role="tab" aria-selected="true" data-metric="r2">R²</button>
+              <button role="tab" aria-selected="false" data-metric="rmse">RMSE</button>
+              <button role="tab" aria-selected="false" data-metric="mae">MAE</button>
+            </div>
+            <p class="chart__hint" id="chartHint">Higher is better</p>
+            <div class="bars" id="pmBars" role="list" aria-label="Model results on the test set">
+              <!-- filled by JS -->
+            </div>
+            <p class="chart__note">Next-hour PM2.5 on 84,156 test hours from 12 Beijing stations. Errors in µg/m³.</p>
+          </div>
+          <div class="study__text">
+            <p class="study__kind">Team research project · BRAC University</p>
+            <h3 class="study__title">Next-Hour Urban PM2.5 Forecasting</h3>
+            <p>Using the Beijing Multi-Site Air Quality Dataset (hourly, 2013–2017), we predicted the next hour's PM2.5 from pollutant and weather readings, and asked a simple question: do complex models actually beat simple ones?</p>
+            <ul class="ticks">
+              <li>Merged 12 stations, filled gaps and built time features</li>
+              <li>Time-ordered train/test split to avoid leakage, plus rolling validation over 2014–2016</li>
+              <li><strong>Linear Regression won</strong> with R² ≈ 0.95 and stayed stable across all three validation years</li>
+            </ul>
+            <a class="link-arrow" href="https://github.com/Shafin11/Machine-Learning-Based-Prediction-of-Urban-PM2.5-Concentration" target="_blank" rel="noopener" data-cursor="Open">See the paper and notebook</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== WORK (horizontal) ========== -->
+    <section class="work" id="work" aria-labelledby="workTitle">
+      <div class="work__sticky">
+        <div class="work__head container">
+          <h2 class="section-title" id="workTitle">More projects</h2>
+          <p class="section-sub">Keep scrolling, or drag the cards sideways.</p>
+        </div>
+
+        <div class="work__track" id="workTrack">
+          <article class="card" data-cursor="Drag">
+            <div class="card__art"><canvas data-art="eurosat" aria-hidden="true"></canvas></div>
+            <div class="card__body">
+              <h3 class="card__title">Satellite Land Cover &amp; Vegetation</h3>
+              <p>ResNet-50 transfer learning in PyTorch to classify land cover on the EuroSAT dataset, plus image-based vegetation coverage analysis.</p>
+              <ul class="chips chips--sm"><li>PyTorch</li><li>ResNet-50</li><li>Computer vision</li></ul>
+              <a class="card__link" href="https://github.com/Shafin11/Vegetation-Detection-Using-Satellite-Imagery-" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="Drag">
+            <div class="card__art"><canvas data-art="regression" aria-hidden="true"></canvas></div>
+            <div class="card__body">
+              <h3 class="card__title">Retail Selling Price Prediction</h3>
+              <p>Explored a multi-store retail dataset to find what drives selling price, then compared regression and neural network models to predict it.</p>
+              <ul class="chips chips--sm"><li>pandas</li><li>scikit-learn</li><li>Regression</li></ul>
+              <a class="card__link" href="https://github.com/Shafin11/EDA-Selling-Price-Prediction" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="Drag">
+            <div class="card__art"><canvas data-art="matrix" aria-hidden="true"></canvas></div>
+            <div class="card__body">
+              <h3 class="card__title">Clinical Outcome Prediction</h3>
+              <p>Cleaned about one million COVID-19 patient records and compared six classifiers, from Logistic Regression to Random Forest and AdaBoost.</p>
+              <ul class="chips chips--sm"><li>Classification</li><li>scikit-learn</li><li>1M+ records</li></ul>
+              <a class="card__link" href="https://github.com/Shafin11/Behavior-Based-Grade-Prediction-Time-Series-Neural-Network" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="Drag">
+            <div class="card__art"><canvas data-art="shop" aria-hidden="true"></canvas></div>
+            <div class="card__body">
+              <h3 class="card__title">E-Commerce Website</h3>
+              <p>A Django-based clothing store with product browsing, customer and seller pages, and database-backed orders.</p>
+              <ul class="chips chips--sm"><li>Django</li><li>Python</li><li>SQL</li></ul>
+              <a class="card__link" href="https://github.com/Shafin11/E-Commerce-Website" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="Drag">
+            <div class="card__art"><canvas data-art="er" aria-hidden="true"></canvas></div>
+            <div class="card__body">
+              <h3 class="card__title">Library Management Database</h3>
+              <p>A 13-table relational database for books, copies, members, borrowing, payments and vendors, designed from an ER diagram.</p>
+              <ul class="chips chips--sm"><li>MariaDB</li><li>SQL</li><li>ER design</li></ul>
+              <a class="card__link" href="https://github.com/Shafin11/Online-Library-Management-System" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="Drag">
+            <div class="card__art"><canvas data-art="fish" aria-hidden="true"></canvas></div>
+            <div class="card__body">
+              <h3 class="card__title">Eat The Fish Game</h3>
+              <p>A 2D arcade game in PyOpenGL and GLUT, drawn with midpoint algorithms, with real-time animation and collision detection.</p>
+              <ul class="chips chips--sm"><li>Python</li><li>PyOpenGL</li><li>Graphics</li></ul>
+              <a class="card__link" href="https://github.com/Shafin11/Eat-The-Fish-Game" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <a class="card card--more" href="https://github.com/Shafin11?tab=repositories" target="_blank" rel="noopener" data-cursor="Open">
+            <span class="card--more__text">All repositories on GitHub</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+
+        <div class="work__progress container" aria-hidden="true"><span id="workProgress"></span></div>
+      </div>
+    </section>
+
+    <!-- ========== JOURNEY (timeline) ========== -->
+    <section class="journey section" id="journey" aria-labelledby="journeyTitle">
+      <div class="container">
+        <h2 class="section-title reveal" id="journeyTitle">My path so far</h2>
+        <p class="section-sub reveal">Work, study and the clubs that shaped how I work with people. Newest first.</p>
+
+        <ol class="timeline" id="timeline">
+          <li class="timeline__line" aria-hidden="true"><span id="timelineFill"></span></li>
+
+          <li class="tl">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__date">Apr 2026 – Sep 2026</p>
+            <div class="tl__card">
+              <p class="tl__type">Work</p>
+              <h3>Executive – IT</h3>
+              <p class="tl__org">Bengal Media Corporation Ltd. (Rtv), Dhaka</p>
+              <ul>
+                <li>Gave technical support to staff and fixed hardware, software, network and system issues across departments.</li>
+                <li>Maintained IT systems, network infrastructure and user accounts so daily office and broadcast work ran without breaks.</li>
+                <li>Managed technology resources, including computers, accessories and software access.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__date">Sep 2025 – Jan 2026</p>
+            <div class="tl__card">
+              <p class="tl__type">Work</p>
+              <h3>Project Manager</h3>
+              <p class="tl__org">Department of Pharmacology, Bangladesh Medical University</p>
+              <p class="tl__quote">Managed the HEAT project “Building a Modern Clinical Pharmacology Education System: Infrastructure Enhancement, Evidence-Based Training and Research Integration”.</p>
+              <ul>
+                <li>Coordinated project planning, procurement, workshops, stakeholder communication and documentation.</li>
+                <li>Supported new lab setup and digital platforms for teaching and research.</li>
+                <li>Brought researchers, teachers and clinicians together and improved how the department collects and analyses data.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__date">Jan 2021 – Nov 2025</p>
+            <div class="tl__card">
+              <p class="tl__type">Education</p>
+              <h3>B.Sc. in Computer Science</h3>
+              <p class="tl__org">BRAC University, Dhaka · CGPA 3.23 / 4.00</p>
+              <ul>
+                <li>Thesis on multimodal gene regulatory network discovery.</li>
+                <li>Projects in machine learning, data science, computer vision, databases and graphics.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__date">Jun 2021 – Mar 2025</p>
+            <div class="tl__card">
+              <p class="tl__type">Leadership</p>
+              <h3>Chief of Execution</h3>
+              <p class="tl__org">BRAC University Adventure Club</p>
+              <ul>
+                <li>Led the planning and running of club trips and events, from logistics to participant safety.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__date">Jun 2021 – Mar 2023</p>
+            <div class="tl__card">
+              <p class="tl__type">Leadership</p>
+              <h3>Senior Executive</h3>
+              <p class="tl__org">BRAC University Business Club</p>
+              <ul>
+                <li>Helped organise university events and coordinated with internal teams and stakeholders.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__date">2018 – 2020</p>
+            <div class="tl__card">
+              <p class="tl__type">Education</p>
+              <h3>SSC &amp; HSC</h3>
+              <p class="tl__org">Rajuk Uttara Model College · GPA 5.00 / 5.00 in both</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== STACK ========== -->
+    <section class="stack section" id="stack" aria-labelledby="stackTitle">
+      <div class="container">
+        <h2 class="section-title reveal" id="stackTitle">Skills &amp; tools</h2>
+        <p class="section-sub reveal">Pick a group to bring it forward. You can also grab the bubbles and throw them around.</p>
+
+        <div class="filters reveal" role="group" aria-label="Filter skills">
+          <button class="filter is-active" type="button" data-group="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-group="lang" aria-pressed="false">Languages</button>
+          <button class="filter" type="button" data-group="ml" aria-pressed="false">ML &amp; data</button>
+          <button class="filter" type="button" data-group="web" aria-pressed="false">Web &amp; databases</button>
+          <button class="filter" type="button" data-group="tools" aria-pressed="false">Tools</button>
+          <button class="filter" type="button" data-group="it" aria-pressed="false">IT</button>
+        </div>
+
+        <div class="bubbles reveal" id="bubbles" data-cursor="Throw">
+          <canvas id="bubbleCanvas" aria-hidden="true"></canvas>
+        </div>
+
+        <!-- Accessible list of the same skills (also the fallback when motion is reduced) -->
+        <div class="skill-list" id="skillList"></div>
+
+        <div class="soft reveal">
+          <h3 class="soft__title">How I work</h3>
+          <ul class="chips chips--soft">
+            <li>Communication</li><li>Leadership &amp; teamwork</li><li>Conflict resolution</li><li>Analytical thinking</li><li>Problem solving</li><li>Attention to detail</li><li>Time management</li><li>Adaptability</li>
+          </ul>
+          <div class="soft__extra">
+            <p><strong>Certificates</strong> Presentation Skills (BRAC University), Improving Communication Skills (Coursera), Understanding Prompt Engineering (DataCamp)</p>
+            <p><strong>Languages</strong> Bengali (native), English (fluent, IELTS 6.5)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__row" id="tickerRow"></div>
+      </div>
+    </section>
+
+    <!-- ========== PLAY (mini games) ========== -->
+    <section class="arcade section" id="play" aria-labelledby="playTitle">
+      <div class="container">
+        <h2 class="section-title reveal" id="playTitle">Take a break, play a game</h2>
+        <p class="section-sub reveal">Three quick games from the worlds I work in. Your best scores are saved on this device.</p>
+
+        <div class="arcade__tabs reveal" role="tablist" aria-label="Choose a game">
+          <button class="arcade__tab" role="tab" id="tab-fit" aria-controls="game-fit" aria-selected="true" type="button">
+            <span class="arcade__tab-name">Fit the line</span><span class="arcade__tab-kind">Data science</span>
+          </button>
+          <button class="arcade__tab" role="tab" id="tab-bits" aria-controls="game-bits" aria-selected="false" tabindex="-1" type="button">
+            <span class="arcade__tab-name">Bit flipper</span><span class="arcade__tab-kind">Computer science</span>
+          </button>
+          <button class="arcade__tab" role="tab" id="tab-bugs" aria-controls="game-bugs" aria-selected="false" tabindex="-1" type="button">
+            <span class="arcade__tab-name">Bug hunt</span><span class="arcade__tab-kind">IT</span>
+          </button>
+        </div>
+
+        <!-- Game 1: Fit the line -->
+        <div class="game" id="game-fit" role="tabpanel" aria-labelledby="tab-fit">
+          <div class="game__info">
+            <h3 class="game__title">Fit the line</h3>
+            <p class="game__how">Drag the two round handles up and down to fit a straight line through the points. Get your R² as close to the best possible fit as you can.</p>
+            <dl class="game__stats">
+              <div><dt>Your R²</dt><dd id="fitR2">0.00</dd></div>
+              <div><dt>Best possible</dt><dd id="fitBest">0.00</dd></div>
+              <div><dt>Score</dt><dd id="fitScore">0%</dd></div>
+            </dl>
+            <p class="game__msg" id="fitMsg" aria-live="polite">Move a handle to start.</p>
+            <div class="game__btns">
+              <button class="btn-sm" id="fitShow" type="button" aria-pressed="false">Show best fit</button>
+              <button class="btn-sm" id="fitNew" type="button">New data</button>
+            </div>
+          </div>
+          <div class="game__stage game__stage--fit" data-cursor="Drag">
+            <canvas id="fitCanvas" role="img" aria-label="Scatter plot with a straight line you can adjust using two handles"></canvas>
+          </div>
+        </div>
+
+        <!-- Game 2: Bit flipper -->
+        <div class="game" id="game-bits" role="tabpanel" aria-labelledby="tab-bits" hidden>
+          <div class="game__info">
+            <h3 class="game__title">Bit flipper</h3>
+            <p class="game__how">Flip the bits so the binary number equals the target. Solve as many as you can in 60 seconds.</p>
+            <dl class="game__stats">
+              <div><dt>Solved</dt><dd id="bitsScore">0</dd></div>
+              <div><dt>Time left</dt><dd id="bitsTime">60s</dd></div>
+              <div><dt>Best</dt><dd id="bitsBest">0</dd></div>
+            </dl>
+            <p class="game__msg" id="bitsMsg" aria-live="polite">Press Start when you're ready.</p>
+            <div class="game__btns">
+              <button class="btn-sm btn-sm--primary" id="bitsStart" type="button">Start</button>
+            </div>
+          </div>
+          <div class="game__stage game__stage--bits">
+            <p class="bits__target">Target <strong id="bitsTarget">--</strong></p>
+            <div class="bits" id="bits" role="group" aria-label="Eight bits, from 128 down to 1"></div>
+            <p class="bits__value">Your number <strong id="bitsValue">0</strong></p>
+          </div>
+        </div>
+
+        <!-- Game 3: Bug hunt -->
+        <div class="game" id="game-bugs" role="tabpanel" aria-labelledby="tab-bugs" hidden>
+          <div class="game__info">
+            <h3 class="game__title">Bug hunt</h3>
+            <p class="game__how">Bugs are popping up on the servers. Tap each one before it escapes. Every bug that gets away costs 10% system health. You have 40 seconds.</p>
+            <dl class="game__stats">
+              <div><dt>Fixed</dt><dd id="bugsScore">0</dd></div>
+              <div><dt>Health</dt><dd id="bugsHealth">100%</dd></div>
+              <div><dt>Best</dt><dd id="bugsBest">0</dd></div>
+            </dl>
+            <div class="health" aria-hidden="true"><span id="bugsBar"></span></div>
+            <p class="game__msg" id="bugsMsg" aria-live="polite">Press Start to boot the servers.</p>
+            <div class="game__btns">
+              <button class="btn-sm btn-sm--primary" id="bugsStart" type="button">Start</button>
+            </div>
+          </div>
+          <div class="game__stage game__stage--bugs">
+            <div class="racks" id="racks" role="group" aria-label="Server grid"></div>
+            <p class="racks__time">Time left <strong id="bugsTime">40s</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WEATHER ========== -->
+    <section class="weather section" id="weather" aria-labelledby="weatherTitle">
+      <div class="container">
+        <h2 class="section-title reveal" id="weatherTitle">Dhaka right now</h2>
+        <p class="section-sub reveal">Live weather from the city I'm based in, with the forecast for the next few days.</p>
+
+        <div class="wx reveal" id="wx" data-state="loading" data-sky="day-cloudy">
+          <div class="wx__sky" aria-hidden="true"></div>
+          <div class="wx__now">
+            <div class="wx__icon" id="wxIcon" aria-hidden="true"></div>
+            <div class="wx__read">
+              <p class="wx__temp"><span id="wxTemp">--</span><span class="wx__unit">°C</span></p>
+              <p class="wx__cond" id="wxCond">Loading live weather…</p>
+              <p class="wx__feels" id="wxFeels"></p>
+            </div>
+          </div>
+          <dl class="wx__stats">
+            <div><dt>Humidity</dt><dd id="wxHum">--</dd></div>
+            <div><dt>Wind</dt><dd id="wxWind">--</dd></div>
+            <div><dt>Rain chance today</dt><dd id="wxRain">--</dd></div>
+            <div><dt>Sunrise · sunset</dt><dd id="wxSun">--</dd></div>
+          </dl>
+          <ol class="wx__days" id="wxDays" aria-label="Forecast for the next days"></ol>
+          <div class="wx__foot">
+            <p id="wxUpdated" aria-live="polite">Fetching the latest reading…</p>
+            <button class="copy-btn" id="wxRefresh" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+              <span>Refresh</span>
+            </button>
+          </div>
+        </div>
+        <p class="wx__credit">Weather data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</p>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <h2 class="contact__title" id="contactTitle">
+          <span class="contact__line">Let's build</span>
+          <span class="contact__line contact__line--outline">something</span>
+          <span class="contact__line">together.</span>
+        </h2>
+
+        <div class="contact__grid">
+          <div class="contact__mail">
+            <p class="contact__label">Email me</p>
+            <button class="contact__email" type="button" data-copy-email data-cursor="Copy">omarshafin12@gmail.com</button>
+            <div class="contact__actions">
+              <button class="copy-btn magnetic" type="button" data-copy-email>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+                <span>Copy email</span>
+              </button>
+              <a class="copy-btn magnetic" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=omarshafin12@gmail.com" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4.5 6.5L12 12l7.5-5.5"/></svg>
+                <span>Write in Gmail</span>
+              </a>
+            </div>
+          </div>
+
+          <ul class="contact__links">
+            <li><a href="https://www.linkedin.com/in/mohammadomarraihan/" target="_blank" rel="noopener" data-cursor="Open"><span>LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+            <li><a href="https://github.com/Shafin11" target="_blank" rel="noopener" data-cursor="Open"><span>GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+            <li><a href="assets/docs/Mohammad_Omar_Raihan_CV.pdf" download data-cv data-cursor="PDF"><span>Download CV</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Designed and built by Mohammad Omar Raihan, <span id="year">2026</span></p>
+      <a href="#home" class="footer__top">Back to top</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
